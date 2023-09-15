@@ -70,11 +70,38 @@ $ pip install rvd
 ### Computing the voicing decision from audio
 
 ```python
-import py_vd
+import rvd
 
 
 # Load audio
-audio, sr = py_vd.load.audio( ... )
+audio, sr = rvd.load.audio( ... )
+
+# Here we'll use a 5 millisecond hop length
+hop_length = int(sr / 200.)
+
+# Provide a sensible frequency range for your domain (upper limit is 2006 Hz)
+# This would be a reasonable range for speech
+fmin = 50
+fmax = 550
+
+# Select a model capacity--one of "tiny" or "full"
+model = 'tiny'
+
+# Choose a device to use for inference
+device = 'cuda:0'
+
+# Pick a batch size that doesn't cause memory errors on your gpu
+batch_size = 2048
+
+# Compute pitch using first gpu
+vd = rvd.predict(audio,
+                    sr,
+                    hop_length,
+                    fmin,
+                    fmax,
+                    model,
+                    batch_size=batch_size,
+                    device=device)
 
 ```
 
