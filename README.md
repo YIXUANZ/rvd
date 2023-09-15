@@ -52,6 +52,7 @@ This repository comprises two main components:
         </tr>        
     </tbody>
 </table>
+</div>
 
 
 2. As noted in our paper, we identified inaccuracies in some labels within the Mocha-TIMIT dataset. This repository includes our manually corrected labels for specific utterances.
