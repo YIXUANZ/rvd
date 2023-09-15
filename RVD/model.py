@@ -77,13 +77,13 @@ class DenseConv2d(nn.Module):
         out4 = self.elu4(self.bn4(self.conv4(out)))
         out = torch.cat([x, out1, out2, out3, out4], dim=1)
         out = self.conv5(out)
-    
+        
         return out
 
             
-class Net(nn.Module):
+class DCCRN(nn.Module):
     def __init__(self):
-        super(Net, self).__init__()
+        super(DCCRN, self).__init__()
 
         self.conv1 = DenseConv2d(2, 4, (1,4), padding=(0,1), stride=(1,2), grate=8)
         self.conv2 = DenseConv2d(4, 8, (1,4), padding=(0,1), stride=(1,2), grate=8)

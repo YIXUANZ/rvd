@@ -44,11 +44,11 @@ This repository comprises two main components:
         </tr>       
         <tr>
             <td><sub>DC-CRN</sub></td>
-            <td><sub>1.17%</sub></td>
-            <td><sub>2.22%</sub></td>
-            <td><sub>0.5%</sub></td>
-            <td><sub>1.66%</sub></td>
-            <td><sub>2.35%</sub></td>
+            <td><sub></sub></td>
+            <td><sub></sub></td>
+            <td><sub></sub></td>
+            <td><sub></sub></td>
+            <td><sub></sub></td>
         </tr>        
     </tbody>
 </table>

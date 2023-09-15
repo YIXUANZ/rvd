@@ -1,4 +1,5 @@
 import argparse
+import rvd
 
 
 def parse_args():
@@ -12,11 +13,24 @@ def parse_args():
         '--audio_files',
         nargs='+',
         required=True,
-        help=''
-    )
-
-
-    
+        help='The audio file to process')
+    parser.add_argument(
+        '--output_files',
+        nargs='+',
+        required=True,
+        help='The file to save voicing decisions.')
+    parser.add_argument(
+        '--batch_size',
+        type=int,
+        help='The number of frames per batch')
+    parser.add_argument(
+        '--gpu',
+        type=int,
+        help='The gpu to perform inference on')
+    parser.add_argument(
+        '--hop_length',
+        type=int,
+        help='The hop length of the analysis window')
     return parser.parse_args()
 
 
@@ -27,8 +41,14 @@ def main():
     """
     args = parse_args()
 
+    # Get inference device
+    device = 'cpu' if args.gpu is None else f'cuda:{args.gpu}'
 
-
+    rvd.predict(args.audio_files,
+                args.output_files,
+                args.hop_length,
+                args.batch_size,
+                device)
 
 # entry point
 main()
