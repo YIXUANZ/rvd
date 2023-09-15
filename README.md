@@ -21,10 +21,11 @@ This repository comprises two main components:
 
 1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. The provided pre-trained model maximizes the use of available laryngograph data and is trained on all five datasets selected for this study: FDA [1], PTDB [2], KEELE [3], MochaTIMIT [4], and CMU Arctic [5].
 
+<div align="center">
 <table>
     <thead>
         <tr>
-            <th> Test Set </th>
+            <th> </th>
             <th><sub>PTDB</sub></th>
             <th><sub>Mocha TIMIT</sub></th>
             <th><sub>KEELE</sub></th>
