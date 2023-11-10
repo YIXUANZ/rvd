@@ -1,7 +1,6 @@
 <h1 align="center">Leveraging Laryngograph Data for Robust Voicing Detection in Speech</h1>
 <div align="center">
 
-## [![PyPI](https://img.shields.io/pypi/v/torchcrepe.svg)](https://pypi.python.org/pypi/torchcrepe)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <!-- [![Downloads](https://static.pepy.tech/badge/torchcrepe)](https://pepy.tech/project/torchcrepe) -->
 
