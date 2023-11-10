@@ -18,13 +18,24 @@ Accurately detecting voiced intervals in speech signals is a critical step in pi
 
 This repository comprises mainly two parts:
 
-1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. The provided model incorporates a pretraining strategy on the LibriSpeech dataset where the pseudo voicing labels are extracted using RAPT and then train on laryngograph datasets selected for this study: FDA [1], PTDB-TUG [2], KEELE [3], MochaTIMIT [4], and CMU Arctic [5], we provide six pretrained models, each tailored to different combinations of the datasets mentioned above. These models can be found in the `./rvd/pretrained` directory:
-   - rvd_cfkm_weights.pth : trained on CMU Arctic, FDA, KEELE, MochaTIMIT.
-   - rvd_cfkp_weights.pth : trained on CMU Arctic, FDA, KEELE, PTDB-TUG.
-   - rvd_cfmp_weights.pth : trained on CMU Arctic, FDA, MochaTIMIT, PTDB-TUG.
-   - rvd_ckmp_weights.pth : trained on CMU Arctic, KEELE, MochaTIMIT, PTDB-TUG.
-   - rvd_fkmp_weights.pth : trained on FDA, KEELE, MochaTIMIT, PTDB-TUG.
-   - rvd_all_weights.pth : maximizes the use of available laryngograph data and is trained on all five laryngograph datasets.
+1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. Initially, the model incorporates a pretraining strategy on the LibriSpeech dataset, utilizing pseudo voicing labels obtained through the RAPT algorithm. It is then fine-tuned on laryngograph datasets chosen for this study:
+
+- FDA [1]
+- PTDB-TUG [2]
+- KEELE [3]
+- Mocha-TIMIT [4]
+- CMU Arctic [5]
+
+Within the `./rvd/pretrained` directory, we provide six variants of the pretrained model, each finetuned with a unique combination of the aforementioned datasets:
+
+- `rvd_cfkm_weights.pth`: Fine-tuned on CMU Arctic, FDA, KEELE, and Mocha-TIMIT.
+- `rvd_cfkp_weights.pth`: Fine-tuned on CMU Arctic, FDA, KEELE, and PTDB-TUG.
+- `rvd_cfmp_weights.pth`: Fine-tuned on CMU Arctic, FDA, Mocha-TIMIT, and PTDB-TUG.
+- `rvd_ckmp_weights.pth`: Fine-tuned on CMU Arctic, KEELE, Mocha-TIMIT, and PTDB-TUG.
+- `rvd_fkmp_weights.pth`: Fine-tuned on FDA, KEELE, Mocha-TIMIT, and PTDB-TUG.
+- `rvd_all_weights.pth`: This comprehensive model maximizes the use of available laryngograph data, being fine-tuned on all five datasets for maximal coverage and performance.
+
+
    
 <!-- The following results were obtained when evaluated on previously unseen test utterances.
 
