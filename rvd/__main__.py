@@ -27,7 +27,7 @@ def parse_args():
         help='The threshold used for deciding voicing.'
     )
     # parser.add_argument(
-    #     '--audio_files',
+    #     '--audio_file',
     #     nargs='+',
     #     required=True,
     #     help='The audio file to process')
@@ -40,7 +40,7 @@ def parse_args():
 
 
 
-def main():
+def main(filename):
     """
     This is a script for running the pre-trained voicing detection model by taking WAV file(s) as input. 
     """
@@ -52,8 +52,8 @@ def main():
     rvd = Model(args)
     print("here")
 
-    filename = './rvd/example/rl012.wav'
-    rvd.predict(filename)
+    # filename = './rvd/example/rl012.wav'
+    rvd.predict()
 
 # entry point
 main()

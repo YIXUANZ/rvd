@@ -19,7 +19,9 @@ Accurately detecting voiced intervals in speech signals is a critical step in pi
 
 This repository comprises two main components:
 
-1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. The provided pre-trained model maximizes the use of available laryngograph data and is trained on all five datasets selected for this study: FDA [1], PTDB [2], KEELE [3], MochaTIMIT [4], and CMU Arctic [5]. The following results were obtained when evaluated on previously unseen test utterances.
+1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. The provided pre-trained model maximizes the use of available laryngograph data and is trained on all five datasets selected for this study: FDA [1], PTDB [2], KEELE [3], MochaTIMIT [4], and CMU Arctic [5]. We also provide the trained DC-CRN models with pretraining that are referenced in the cross-corpus evaluation section in this directory.
+
+<!-- The following results were obtained when evaluated on previously unseen test utterances.
 
 <div align="center">
 <table>
@@ -52,18 +54,26 @@ This repository comprises two main components:
         </tr>        
     </tbody>
 </table>
-</div>
+</div> -->
 
 
-2. As noted in our paper, we identified inaccuracies in some labels within the Mocha-TIMIT dataset. This repository includes our manually corrected labels for specific utterances. 
+2. As noted in our paper, we identified inaccuracies in some labels within the Mocha-TIMIT dataset. This repository includes our manually corrected labels for specific utterances. Additionally, we have updated the file lists for the PTDB-TUG and Mocha-TIMIT datasets to exclude those entries with low-quality laryngograph waveforms.
+
 
 ## Installation
 
-The package is available on PyPI. To install it, execute the following command within your Python environment:
+To install the package, clone the repo and execute the following command in the rvd root folder:
+
+```bash
+$ pip install .
+```
+
+<!-- The package will be made available on PyPI. To install it, execute the following command within your Python environment:
 
 ```bash
 $ pip install rvd
-```
+``` -->
+
 
 ## Usage
 
@@ -73,24 +83,23 @@ $ pip install rvd
 import rvd
 
 
-# Load audio
-audio, sr = rvd.load.audio( ... )
+# Assign the path of the audio file
+audio_filename = ...
 
-# Here we'll use a 5 millisecond hop length
-hop_length = int(sr / 200.)
+# Specify the path to the pre-trained model file
+model_file = ...
+
+# Set the voicing threshold
+voicing_threshold = ...
 
 # Choose a device to use for inference
 device = 'cuda:0'
 
-# Pick a batch size that doesn't cause memory errors on your gpu
-batch_size = 2048
+# Create the model with the specified model file, voicing threshold, and device
+model = rvd.Model(model_file, voicing_threshold, device)
 
 # Compute voicing decision using first gpu
-vd = rvd.predict(audio,
-                    sr,
-                    hop_length,
-                    batch_size=batch_size,
-                    device=device)
+vd = model.predict(audio_filename)
 
 ```
 
