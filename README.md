@@ -18,13 +18,13 @@ Accurately detecting voiced intervals in speech signals is a critical step in pi
 
 This repository comprises mainly two parts:
 
-1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. Initially, the model incorporates a pretraining strategy on the LibriSpeech dataset, utilizing pseudo voicing labels obtained through the RAPT algorithm. It is then fine-tuned on laryngograph datasets chosen for this study:
+1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. Initially, the model incorporates a pretraining strategy on the LibriSpeech dataset, utilizing pseudo voicing labels obtained through the RAPT algorithm [1]. It is then fine-tuned on laryngograph datasets chosen for this study:
 
-- FDA [1]
-- PTDB-TUG [2]
-- KEELE [3]
-- Mocha-TIMIT [4]
-- CMU Arctic [5]
+- FDA [2]
+- PTDB-TUG [3]
+- KEELE [4]
+- Mocha-TIMIT [5]
+- CMU Arctic [6]
 
 Within the `./rvd/pretrained` directory, we provide six variants of the pretrained model, each finetuned with a unique combination of the aforementioned datasets:
 
@@ -122,14 +122,16 @@ vd = model.predict(audio_filename)
 
 ## References
 
-[1] P. C. Bagshaw, S. M. Hiller, and M. A. Jack, “Enhanced pitch tracking and the processing of F0 contours for computer aided intonation teaching,” in Proc. Eurospeech, 1993.
+[1] D. Talkin and W. B. Kleijn, “A robust algorithm for pitch tracking (RAPT),” Speech Coding and Synthesis, vol. 495, p. 518, 1995.
 
-[2] G. Pirker, M. Wohlmayr, S. Petrik, and F. Pernkopf, “A pitch tracking corpus with evaluation on multipitch tracking scenario,” in Proc. Interspeech, 2011.
+[2] P. C. Bagshaw, S. M. Hiller, and M. A. Jack, “Enhanced pitch tracking and the processing of F0 contours for computer aided intonation teaching,” in Proc. Eurospeech, 1993.
 
-[3] F. Plante, G. Meyer, and W. Ainsworth, “A pitch extraction reference database,” in Proc. Eurospeech, 1995.
+[3] G. Pirker, M. Wohlmayr, S. Petrik, and F. Pernkopf, “A pitch tracking corpus with evaluation on multipitch tracking scenario,” in Proc. Interspeech, 2011.
 
-[4] https://data.cstr.ed.ac.uk/mocha/
+[4] F. Plante, G. Meyer, and W. Ainsworth, “A pitch extraction reference database,” in Proc. Eurospeech, 1995.
 
-[5] J. Kominek and A. W. Black, “The CMU arctic speech databases,” in Fifth ISCA workshop on speech synthesis, 2004.
+[5] https://data.cstr.ed.ac.uk/mocha/
 
-[6] D. Talkin and W. B. Kleijn, “A robust algorithm for pitch tracking (RAPT),” Speech Coding and Synthesis, vol. 495, p. 518, 1995.
+[6] J. Kominek and A. W. Black, “The CMU arctic speech databases,” in Fifth ISCA workshop on speech synthesis, 2004.
+
+
