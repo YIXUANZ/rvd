@@ -93,7 +93,7 @@ $ pip install rvd
 
 ## Usage
 
-### computing the voicing decision from audio
+### Computing the voicing decision from audio
 
 ```python
 import rvd
