@@ -18,7 +18,7 @@ Accurately detecting voiced intervals in speech signals is a critical step in pi
 
 This repository comprises mainly two parts:
 
-1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. The provided model incorporates a pretraining strategy on the LibriSpeech dataset where the pseudo voicing labels are extracted using RAPT and then train on laryngograph datasets selected for this study: FDA [1], PTDB-TUG [2], KEELE [3], MochaTIMIT [4], and CMU Arctic [5]. We provide six pretrained models, all listed in './rvd/pretrained' directory:
+1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. The provided model incorporates a pretraining strategy on the LibriSpeech dataset where the pseudo voicing labels are extracted using RAPT and then train on laryngograph datasets selected for this study: FDA [1], PTDB-TUG [2], KEELE [3], MochaTIMIT [4], and CMU Arctic [5], we provide six pretrained models, each tailored to different combinations of the datasets mentioned above. These models can be found in the `./rvd/pretrained` directory:
    - rvd_cfkm_weights.pth : trained on CMU Arctic, FDA, KEELE, MochaTIMIT.
    - rvd_cfkp_weights.pth : trained on CMU Arctic, FDA, KEELE, PTDB-TUG.
    - rvd_cfmp_weights.pth : trained on CMU Arctic, FDA, MochaTIMIT, PTDB-TUG.
