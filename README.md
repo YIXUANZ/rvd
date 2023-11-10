@@ -73,7 +73,7 @@ Within the `./rvd/pretrained` directory, we provide six variants of the pretrain
 </div> -->
 
 
-2. As noted in the paper, we have identified and addressed two key issues: flawed laryngograph recordings within the PTDB-TUG dataset and inaccuracies in the Mocha-TIMIT dataset labels, attributed to noisy harmonic patterns during silent intervals in laryngograph recordings. To rectify these issues, we have preprocessed the data by removing the samples with low-quality laryngograph waveforms and correcting the labels for specific utterances. This repository contains updated lists of files for both the PTDB-TUG and Mocha-TIMIT datasets, from which we have removed all entries containing poor-quality laryngograph waveforms. Additionally, the repository encompasses manually corrected labels for select utterances from the Mocha-TIMIT dataset, accessible in the `./corrected_labels` directory.
+2. As noted in the paper, we have identified and addressed two key issues: flawed laryngograph recordings within the PTDB-TUG dataset and inaccuracies in the Mocha-TIMIT dataset labels, attributed to noisy harmonic patterns during silent intervals in laryngograph recordings. To rectify these issues, we have preprocessed the data by removing the samples with low-quality laryngograph waveforms and correcting the labels for specific utterances. This repository contains updated lists of filenames for both the PTDB-TUG and Mocha-TIMIT datasets, from which we have removed all entries containing poor-quality laryngograph waveforms. Additionally, the repository encompasses manually corrected labels for select utterances from the Mocha-TIMIT dataset, accessible in the `./corrected_labels` directory.
 
 
 ## Installation
