@@ -73,7 +73,11 @@ Within the `./rvd/pretrained` directory, we provide six variants of the pretrain
 </div> -->
 
 
-2. As noted in our paper, we identified inaccuracies in some labels within the Mocha-TIMIT dataset. This repository includes our manually corrected labels for specific utterances. Additionally, we have updated the file lists for the PTDB-TUG and Mocha-TIMIT datasets to exclude those entries with low-quality laryngograph waveforms.
+2. As noted in the paper, we identified flawed laryngograph recordings in PTDB-TUG and inaccuracies in some labels within the Mocha-TIMIT dataset and performs preprocessing to eliminate problematic samples and manually corrected labels for specific utterances.  This repository includes the file lists for the PTDB-TUG and Mocha-TIMIT datasets which exclude those entries with low-quality laryngograph waveforms, and manually corrected labels for specific utterances in Mocha-TIMIT dataset in ./corrected_labels directory.
+
+As detailed in our study, we identified flawed laryngograph recordings in the PTDB-TUG dataset and labeling inaccuracies in the Mocha-TIMIT dataset caused by noisy harmonic patterns in silence intervals. To address these issues, preprocessing including removing problematic samples, and correcting labels for certain utterances are performed. We include the file lists for the PTDB-TUG and Mocha-TIMIT datasets, which have been cleansed of entries with substandard laryngograph waveforms. Furthermore, it includes the manually corrected labels for particular utterances in the Mocha-TIMIT dataset, all of which can be found in the `./corrected_labels` directory.
+
+As detailed in our study, we have identified and addressed two key issues: flawed laryngograph recordings within the PTDB-TUG dataset and inaccuracies in the Mocha-TIMIT dataset labels, attributed to noisy harmonic patterns during silent intervals in laryngograph recordings. To rectify these issues, we have preprocessed the data by removing the samples with low-quality laryngograph waveforms and correcting the labels for specific utterances. This repository contains updated lists of files for both the PTDB-TUG and Mocha-TIMIT datasets, from which we have removed all entries containing poor-quality laryngograph waveforms. Additionally, the repository encompasses manually corrected labels for select utterances from the Mocha-TIMIT dataset, accessible in the `./corrected_labels` directory.
 
 
 ## Installation
