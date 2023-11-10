@@ -96,8 +96,6 @@ class DCCRN(nn.Module):
         self.glstm = GLSTM(4*256, 4)
         self.fc = nn.Linear(4*256, 1)
         
-        self.bceloss = nn.BCEWithLogitsLoss(reduction='none')
-
     def forward(self, x):
         out = x.permute(0,1,3,2)
    
