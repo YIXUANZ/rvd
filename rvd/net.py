@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+### Model definition ###
 
 class GLSTM(nn.Module):
     def __init__(self, hidden_size=1024, groups=4):
@@ -17,7 +18,8 @@ class GLSTM(nn.Module):
         self.groups = groups
      
     def forward(self, x):
-        out = x.transpose(1, 2).contiguous()
+        out = x
+        out = out.transpose(1, 2).contiguous()
         out = out.view(out.size(0), out.size(1), -1).contiguous()
     
         out = torch.chunk(out, self.groups, dim=-1)
@@ -29,6 +31,7 @@ class GLSTM(nn.Module):
         out = torch.chunk(out, self.groups, dim=-1)
         out = torch.cat([self.lstm_list2[i](out[i])[0] for i in range(self.groups)], dim=-1)
         out = self.ln2(out)
+
         return out
 
 
@@ -76,14 +79,16 @@ class DenseConv2d(nn.Module):
         out = torch.cat([x, out1, out2, out3], dim=1)
         out4 = self.elu4(self.bn4(self.conv4(out)))
         out = torch.cat([x, out1, out2, out3, out4], dim=1)
-        out = self.conv5(out)
-        
+        out5 = self.conv5(out)
+    
+        out = out5
+    
         return out
 
             
-class DCCRN(nn.Module):
+class Net(nn.Module):
     def __init__(self):
-        super(DCCRN, self).__init__()
+        super(Net, self).__init__()
 
         self.conv1 = DenseConv2d(2, 4, (1,4), padding=(0,1), stride=(1,2), grate=8)
         self.conv2 = DenseConv2d(4, 8, (1,4), padding=(0,1), stride=(1,2), grate=8)
@@ -97,9 +102,8 @@ class DCCRN(nn.Module):
         self.fc = nn.Linear(4*256, 1)
         
     def forward(self, x):
-        out = x.permute(0,1,3,2)
-   
-        e1 = self.conv1(out)
+
+        e1 = self.conv1(x)
         e2 = self.conv2(e1)
         e3 = self.conv3(e2)
         e4 = self.conv4(e3)
@@ -112,4 +116,3 @@ class DCCRN(nn.Module):
         out = out.permute(0,2,1)
 
         return out
-
