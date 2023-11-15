@@ -15,7 +15,7 @@ class Model(object):
         self.to_tensor = ToTensor()
         self.stft = STFT(frame_size=1024, frame_shift=80)
         if device:
-            self.device = device
+            self.device = torch.device(device if torch.cuda.is_available() else "cpu")
         else:
             self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
