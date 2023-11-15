@@ -31,7 +31,7 @@ class Model(object):
         output1 = output.cpu().numpy()[0]
         return output1
 
-    def test(self, filename, model_srate=8000):
+    def predict(self, filename, model_srate=8000):
         '''
         :param filename
         '''
