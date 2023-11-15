@@ -90,6 +90,7 @@ $ pip install .
 $ pip install rvd
 ``` -->
 
+We tested the code with Python version 3.8.18 and pip version 23.3.1.
 
 ## Usage
 

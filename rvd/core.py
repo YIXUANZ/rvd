@@ -8,16 +8,19 @@ from .util import numParams, ToTensor, STFT
 
 class Model(object):
     
-    def __init__(self, args):
+    def __init__(self, model_file='./pretrained/rvd_all_weights.pth', voicing_threshold=0.5, device=None):
         '''
         :param args
         '''
         self.to_tensor = ToTensor()
         self.stft = STFT(frame_size=1024, frame_shift=80)
-        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        if device:
+            self.device = device
+        else:
+            self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-        self.model_file = args.model_file
-        self.voicing_threshold = args.voicing_threshold # default 0.5
+        self.model_file = model_file
+        self.voicing_threshold = voicing_threshold # default 0.5
 
     def eval_forward(self, feat, net):
         '''
@@ -28,7 +31,7 @@ class Model(object):
         output1 = output.cpu().numpy()[0]
         return output1
 
-    def predict(self, filename, model_srate=8000):
+    def test(self, filename, model_srate=8000):
         '''
         :param filename
         '''

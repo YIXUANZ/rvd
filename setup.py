@@ -11,10 +11,10 @@ setup(
     packages=['rvd'],
     package_data={'rvd': ['pretrained/*']},
     install_requires=['torch',
-                      'numpy', 
-                      'scipy',
-                      'SoundFile',
-                      'librosa<0.10'                    
+                      'numpy==1.24.4', 
+                      'scipy==1.10.1',
+                      'SoundFile==0.12.1',
+                      'librosa==0.9.2'                    
                       ],
     classifiers=['License :: OSI Approved :: MIT License'],
 )
