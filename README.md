@@ -78,11 +78,11 @@ Within the `./rvd/pretrained` directory, we provide six variants of the pretrain
 - `corrected_labels/`
   - `Mocha_TIMIT/`
     - `manually_corrected_subset/` - This folder contains manually corrected labels for specific utterances in the Mocha-TIMIT dataset, as mentioned in the paper. The corrections address inaccuracies found in the original dataset.
-    - `filelist.lst` - A list of filenames that correspond to the samples with high-quality laryngograph waveforms after preprocessing.
-    - `README.md` - Describes the preprocessing steps taken for the Mocha-TIMIT dataset and provides details on the manually corrected subset.
+    - `filelist.lst` - A list of filenames that correspond to the samples with laryngograph waveforms after preprocessing.
+    - `README.md` 
   - `PTDB-TUG/`
-    - `filelists.lst` - A list of filenames for samples that have passed the quality checks for laryngograph waveforms.
-    - `README.md` - Details the preprocessing steps taken for the PTDB-TUG dataset and lists the qualifying samples.
+    - `filelists.lst` - A list of filenames for samples after preprocessing to exclude low-quality laryngograph waveforms.
+    - `README.md` 
 
 
 ## Installation
