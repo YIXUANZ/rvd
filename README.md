@@ -18,7 +18,7 @@ Accurately detecting voiced intervals in speech signals is a critical step in pi
 
 This repository comprises mainly two parts:
 
-1. The pretrained CrossNet model that leverages laryngograph data for voicing detection. Initially, the model incorporates a pretraining strategy on the LibriSpeech dataset, utilizing pseudo voicing labels obtained through the RAPT algorithm [1]. It is then fine-tuned on laryngograph datasets chosen for this study:
+1. The pretrained DC-CRN model (the updated CrossNet model will be released soon) that leverages laryngograph data for voicing detection. Initially, the model incorporates a pretraining strategy on the LibriSpeech dataset, utilizing pseudo voicing labels obtained through the RAPT algorithm [1]. It is then fine-tuned on laryngograph datasets chosen for this study:
 
 - FDA [2]
 - PTDB-TUG [3]
