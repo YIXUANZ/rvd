@@ -8,17 +8,17 @@
 
 Code for robust voicing detection using the model described in:
 
-Y. Zhang, H. Wang, and D.L. Wang, "Leveraging Laryngograph Data for Robust Voicing Detection in Speech", to be submitted, 2023
+Y. Zhang, H. Wang, and D.L. Wang, "Leveraging Laryngograph Data for Robust Voicing Detection in Speech", to be submitted, 2024
 
 We kindly request that academic publications utilizing this repo cite the aforementioned paper.
 
 ## Description
 
-Accurately detecting voiced intervals in speech signals is a critical step in pitch tracking and has numerous applications. While conventional signal processing methods and deep learning algorithms have been proposed for this task, their need to fine-tune threshold parameters for different datasets and limited generalization restrict their utility in real-world applications. To address these challenges, this repo provides a supervised voicing detection model that leverages recorded laryngograph data. The model is based on a densely-connected convolutional recurrent neural network (DC-CRN), and trained on data with reference voicing decisions extracted from laryngograph data. Pre-training is also investigated to improve the generalization ability of the model. 
+Accurately detecting voiced intervals in speech signals is a critical step in pitch tracking and has numerous applications. While conventional signal processing methods and deep learning algorithms have been proposed for this task, their need to fine-tune threshold parameters for different datasets and limited generalization restrict their utility in real-world applications. To address these challenges, this study proposes a supervised voicing detection model that leverages recorded laryngograph data. The model, adapted from a recently developed CrossNet architecture, is trained using reference voicing decisions derived from laryngograph datasets. Pretraining is also investigated to improve the generalization ability of the model. The proposed model produces robust voicing detection results, outperforming other strong baseline methods, and generalizes well to unseen datasets. The source code of the proposed model with pretraining is provided along with the list of used laryngograph datasets to facilitate further research in this area.
 
 This repository comprises mainly two parts:
 
-1. The pretrained DC-CRN model that leverages laryngograph data for voicing detection. Initially, the model incorporates a pretraining strategy on the LibriSpeech dataset, utilizing pseudo voicing labels obtained through the RAPT algorithm [1]. It is then fine-tuned on laryngograph datasets chosen for this study:
+1. The pretrained CrossNet model that leverages laryngograph data for voicing detection. Initially, the model incorporates a pretraining strategy on the LibriSpeech dataset, utilizing pseudo voicing labels obtained through the RAPT algorithm [1]. It is then fine-tuned on laryngograph datasets chosen for this study:
 
 - FDA [2]
 - PTDB-TUG [3]
